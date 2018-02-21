@@ -21,6 +21,17 @@ namespace PPlayer
             MainBass.InitBass(MainBass.HG);
             Main.InputFormats();
 
+            PLAYLIST playlist_ = new PLAYLIST(Main.AppPath + "playlists\\base.m3u");
+            for (int i = 0; i < playlist_.Count(); i++)
+            {
+                Main.Files.Add(playlist_[i]);
+                Tag Showed_track = new Tag(playlist_[i]);
+                Playlist.Items.Add((i+1)+". "+Showed_track.Artist + " — " + Showed_track.Title);
+            }
+            Playlist.SelectedIndex = 0;
+            bplay_button_Click(this, new EventArgs());
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,7 +55,14 @@ namespace PPlayer
         {
             if (openFileDialog1.FileName.Contains(".m3u"))
             {
+                    PLAYLIST playlist_ = new PLAYLIST(openFileDialog1.FileName);
 
+                    for (int i = 0; i < playlist_.Count(); i++)
+                    {
+                        Main.Files.Add(playlist_[i]);
+                        Tag Showed_track = new Tag(playlist_[i]);
+                        Playlist.Items.Add((i + 1) + ". " + Showed_track.Artist + " — " + Showed_track.Title);
+                    }
             }
             else
             {
@@ -54,7 +72,7 @@ namespace PPlayer
                 {
                     Main.Files.Add(deque[i]);
                     Tag Showed_track = new Tag(deque[i]);
-                    Playlist.Items.Add(Showed_track.Artist + " — " + Showed_track.Title);
+                    Playlist.Items.Add((i + 1) + ". " + Showed_track.Artist + " — " + Showed_track.Title);
                 }
             }
 

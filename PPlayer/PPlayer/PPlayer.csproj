@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\M3U_Exception.cs" />
     <Compile Include="classes\MainBass.cs" />
     <Compile Include="classes\Main.cs" />
     <Compile Include="classes\PLAYLIST.cs" />
@@ -138,9 +139,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\cancel-512.png" />
-    <None Include="Resources\gicdukblipslqeqyplmg.png" />
     <None Include="img\pause.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="playlists\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
