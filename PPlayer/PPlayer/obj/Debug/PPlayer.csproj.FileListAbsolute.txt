@@ -1,0 +1,35 @@
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\PPlayer.exe.config
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\PPlayer.exe
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\PPlayer.pdb
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.csprojResolveAssemblyReference.cache
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.Pplayer.resources
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.Properties.Resources.resources
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.csproj.GenerateResource.Cache
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.csproj.CoreCompileInputs.cache
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.exe
+D:\Проекти\C#\PPlayer\PPlayer\obj\Debug\PPlayer.pdb
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\bass.dll
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\Bass.Net.dll
+D:\Проекти\C#\PPlayer\PPlayer\bin\Debug\Bass.Net.xml
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\bass.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\PPlayer.exe.config
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\PPlayer.exe
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\PPlayer.pdb
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\Bass.Net.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\Bass.Net.xml
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.csprojResolveAssemblyReference.cache
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.Pplayer.resources
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.Properties.Resources.resources
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.csproj.GenerateResource.Cache
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.csproj.CoreCompileInputs.cache
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.exe
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\obj\Debug\PPlayer.pdb
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bassalac.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bassflac.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\basswma.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\basswv.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bass_aac.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bass_ac3.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bass_mpc.dll
+C:\Users\natio\OneDrive\Рабочий стол\PPlayer\PPlayer\bin\Debug\plugins\bass_tta.dll
