@@ -12,7 +12,7 @@ namespace PPlayer
 {
     public partial class Pplayer : Form
     {
-        
+
 
         public Pplayer()
         {
@@ -20,6 +20,30 @@ namespace PPlayer
             Main.Link = this;
             MainBass.InitBass(MainBass.HG);
             Main.InputFormats();
+
+            try
+            {
+                PLAYLIST playlist_ = new PLAYLIST(Main.AppPath + "playlists\\base.m3u");
+                for (int i = 0; i < playlist_.Count(); i++)
+                {
+                    Main.Files.Add(playlist_[i]);
+                    Tag Showed_track = new Tag(playlist_[i]);
+                    Playlist.Items.Add((i + 1) + ". " + Showed_track.Artist + " — " + Showed_track.Title);
+                }
+
+                Playlist.SelectedIndex = 0;
+
+                Tag Showed_track_t = new Tag(playlist_[0]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title; ;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
+
+                bplay_button_Click(this, new EventArgs());
+            }
+            catch
+            {
+
+            }
 
         }
 
@@ -44,7 +68,19 @@ namespace PPlayer
         {
             if (openFileDialog1.FileName.Contains(".m3u"))
             {
+                    PLAYLIST playlist_ = new PLAYLIST(openFileDialog1.FileName);
 
+                    for (int i = 0; i < playlist_.Count(); i++)
+                    {
+                        Main.Files.Add(playlist_[i]);
+                        Tag Showed_track = new Tag(playlist_[i]);
+                        Playlist.Items.Add((i + 1) + ". " + Showed_track.Artist + " — " + Showed_track.Title);
+                    }
+
+                    Tag Showed_track_t = new Tag(playlist_[0]);
+                    pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                    Track_label_box.Text = Showed_track_t.Artist;
+                    Track_label_box2.Text = Showed_track_t.Title;
             }
             else
             {
@@ -54,8 +90,14 @@ namespace PPlayer
                 {
                     Main.Files.Add(deque[i]);
                     Tag Showed_track = new Tag(deque[i]);
-                    Playlist.Items.Add(Showed_track.Artist + " — " + Showed_track.Title);
+                    Playlist.Items.Add((i + 1) + ". " + Showed_track.Artist + " — " + Showed_track.Title);
+                   
                 }
+
+                Tag Showed_track_t = new Tag(deque[0]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
             }
 
             
@@ -95,7 +137,10 @@ namespace PPlayer
                 percen_bar.Value = MainBass.GetPosOfStream(MainBass.Stream);
                 percen_bar2.Value = MainBass.GetPosOfStream(MainBass.Stream);
 
-                
+                Tag Showed_track_t = new Tag(Main.Files[Main.CurTrackNumber]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
             }
             
             if (MainBass.EndOfPlaylist)
@@ -110,6 +155,11 @@ namespace PPlayer
                 MainBass.EndOfPlaylist = false;
                 bplay_button.Image = PPlayer.Properties.Resources.play;
                 MainBass.img_flag = true;
+
+                Tag Showed_track_t = new Tag(Main.Files[0]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
             }
             
 
@@ -136,15 +186,20 @@ namespace PPlayer
 
 
                     timer1.Enabled = true;
-                    bplay_button.Image = PPlayer.Properties.Resources.pause;
+                    bplay_button.Image = PPlayer.Properties.Resources.pause2;
                     MainBass.img_flag = false;
+
+                    Tag Showed_track_t = new Tag(Main.Files[Main.CurTrackNumber]);
+                    pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                    Track_label_box.Text = Showed_track_t.Artist;
+                    Track_label_box2.Text = Showed_track_t.Title;
                 }
             }
             else
             {
                 MainBass.Pause();
                 timer1.Enabled = false;
-                bplay_button.Image = PPlayer.Properties.Resources.play;
+                bplay_button.Image = PPlayer.Properties.Resources.play2;
                 MainBass.img_flag = true;
 
             }
@@ -232,9 +287,14 @@ namespace PPlayer
 
 
                     timer1.Enabled = true;
-                    bplay_button.Image = PPlayer.Properties.Resources.pause;
+                    bplay_button.Image = PPlayer.Properties.Resources.pause2;
                     MainBass.img_flag = false;
-                }
+
+                    Tag Showed_track_t = new Tag(Main.Files[Main.CurTrackNumber]);
+                    pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                    Track_label_box.Text = Showed_track_t.Artist;
+                    Track_label_box2.Text = Showed_track_t.Title;
+            }
             
         }
 
@@ -259,8 +319,13 @@ namespace PPlayer
 
                 flat_track_slider.Value = MainBass.GetPosOfStream(MainBass.Stream);
 
+                Tag Showed_track_t = new Tag(Main.Files[Main.CurTrackNumber]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
 
                 timer1.Enabled = true;
+
 
             }
 
@@ -288,8 +353,10 @@ namespace PPlayer
                 percen_bar2.MaxValue = MainBass.GetTimeOfStream(MainBass.Stream);
 
                 flat_track_slider.Value = MainBass.GetPosOfStream(MainBass.Stream);
-
-
+                Tag Showed_track_t = new Tag(Main.Files[Main.CurTrackNumber]);
+                pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
+                Track_label_box.Text = Showed_track_t.Artist;
+                Track_label_box2.Text = Showed_track_t.Title;
                 timer1.Enabled = true;
 
             }

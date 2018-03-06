@@ -39,9 +39,11 @@
             this.Playlist = new System.Windows.Forms.ListBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.exit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Track_label_box = new System.Windows.Forms.Label();
+            this.Track_label_box2 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.percen_bar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.percen_bar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
@@ -49,13 +51,15 @@
             this.bnext_button = new Bunifu.Framework.UI.BunifuImageButton();
             this.bplay_button = new Bunifu.Framework.UI.BunifuImageButton();
             this.bprev_button = new Bunifu.Framework.UI.BunifuImageButton();
+            this.exit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bopen_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnext_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bplay_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bprev_button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // label_track
@@ -129,6 +133,7 @@
             this.Playlist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Playlist.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Playlist.FormattingEnabled = true;
+            this.Playlist.HorizontalScrollbar = true;
             this.Playlist.ItemHeight = 22;
             this.Playlist.Location = new System.Drawing.Point(-1, 109);
             this.Playlist.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -153,20 +158,6 @@
             this.panel1.Size = new System.Drawing.Size(575, 36);
             this.panel1.TabIndex = 16;
             // 
-            // exit
-            // 
-            this.exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.exit.Image = global::PPlayer.Properties.Resources.cancel_512;
-            this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(542, 3);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(30, 28);
-            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.exit.TabIndex = 0;
-            this.exit.TabStop = false;
-            this.exit.Zoom = 10;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.flat_track_slider);
@@ -180,6 +171,40 @@
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // Track_label_box
+            // 
+            this.Track_label_box.AutoSize = true;
+            this.Track_label_box.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Track_label_box.ForeColor = System.Drawing.Color.White;
+            this.Track_label_box.Location = new System.Drawing.Point(152, 38);
+            this.Track_label_box.Name = "Track_label_box";
+            this.Track_label_box.Size = new System.Drawing.Size(24, 37);
+            this.Track_label_box.TabIndex = 26;
+            this.Track_label_box.Text = " ";
+            // 
+            // Track_label_box2
+            // 
+            this.Track_label_box2.AutoSize = true;
+            this.Track_label_box2.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Track_label_box2.ForeColor = System.Drawing.Color.White;
+            this.Track_label_box2.Location = new System.Drawing.Point(157, 79);
+            this.Track_label_box2.Name = "Track_label_box2";
+            this.Track_label_box2.Size = new System.Drawing.Size(14, 23);
+            this.Track_label_box2.TabIndex = 27;
+            this.Track_label_box2.Text = " ";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Image = global::PPlayer.Properties.Resources.title;
+            this.pictureBox.Location = new System.Drawing.Point(70, 38);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(79, 64);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 25;
+            this.pictureBox.TabStop = false;
             // 
             // panel3
             // 
@@ -237,12 +262,12 @@
             // bopen_button
             // 
             this.bopen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bopen_button.Image = global::PPlayer.Properties.Resources.playlist;
+            this.bopen_button.Image = global::PPlayer.Properties.Resources.playlist2;
             this.bopen_button.ImageActive = null;
-            this.bopen_button.Location = new System.Drawing.Point(425, 265);
+            this.bopen_button.Location = new System.Drawing.Point(481, 265);
             this.bopen_button.Name = "bopen_button";
-            this.bopen_button.Size = new System.Drawing.Size(103, 98);
-            this.bopen_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bopen_button.Size = new System.Drawing.Size(45, 47);
+            this.bopen_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bopen_button.TabIndex = 20;
             this.bopen_button.TabStop = false;
             this.bopen_button.Zoom = 10;
@@ -251,11 +276,11 @@
             // bnext_button
             // 
             this.bnext_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bnext_button.Image = global::PPlayer.Properties.Resources.next_play;
+            this.bnext_button.Image = global::PPlayer.Properties.Resources.next_play2;
             this.bnext_button.ImageActive = null;
-            this.bnext_button.Location = new System.Drawing.Point(193, 265);
+            this.bnext_button.Location = new System.Drawing.Point(187, 265);
             this.bnext_button.Name = "bnext_button";
-            this.bnext_button.Size = new System.Drawing.Size(103, 98);
+            this.bnext_button.Size = new System.Drawing.Size(70, 62);
             this.bnext_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bnext_button.TabIndex = 19;
             this.bnext_button.TabStop = false;
@@ -265,11 +290,11 @@
             // bplay_button
             // 
             this.bplay_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bplay_button.Image = global::PPlayer.Properties.Resources.play;
+            this.bplay_button.Image = global::PPlayer.Properties.Resources.play2;
             this.bplay_button.ImageActive = null;
-            this.bplay_button.Location = new System.Drawing.Point(94, 265);
+            this.bplay_button.Location = new System.Drawing.Point(103, 265);
             this.bplay_button.Name = "bplay_button";
-            this.bplay_button.Size = new System.Drawing.Size(103, 98);
+            this.bplay_button.Size = new System.Drawing.Size(73, 62);
             this.bplay_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bplay_button.TabIndex = 18;
             this.bplay_button.TabStop = false;
@@ -279,16 +304,30 @@
             // bprev_button
             // 
             this.bprev_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bprev_button.Image = global::PPlayer.Properties.Resources.lost_play;
+            this.bprev_button.Image = global::PPlayer.Properties.Resources.lost_play2;
             this.bprev_button.ImageActive = null;
-            this.bprev_button.Location = new System.Drawing.Point(-1, 265);
+            this.bprev_button.Location = new System.Drawing.Point(15, 265);
             this.bprev_button.Name = "bprev_button";
-            this.bprev_button.Size = new System.Drawing.Size(100, 98);
+            this.bprev_button.Size = new System.Drawing.Size(77, 62);
             this.bprev_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bprev_button.TabIndex = 17;
             this.bprev_button.TabStop = false;
             this.bprev_button.Zoom = 10;
             this.bprev_button.Click += new System.EventHandler(this.bprev_button_Click);
+            // 
+            // exit
+            // 
+            this.exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.exit.Image = global::PPlayer.Properties.Resources.cancel_512;
+            this.exit.ImageActive = null;
+            this.exit.Location = new System.Drawing.Point(542, 3);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(30, 28);
+            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exit.TabIndex = 0;
+            this.exit.TabStop = false;
+            this.exit.Zoom = 10;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // Pplayer
             // 
@@ -296,6 +335,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(575, 466);
+            this.Controls.Add(this.Track_label_box2);
+            this.Controls.Add(this.Track_label_box);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.percen_bar2);
             this.Controls.Add(this.percen_bar);
@@ -318,12 +360,13 @@
             this.Text = "Pplayer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bopen_button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnext_button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bplay_button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bprev_button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,6 +392,9 @@
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label Track_label_box2;
+        private System.Windows.Forms.Label Track_label_box;
     }
 }
 
