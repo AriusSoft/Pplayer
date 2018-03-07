@@ -108,6 +108,8 @@
     <Content Include="bass.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\tray.png" />
     <None Include="Resources\def.png" />
     <None Include="img\panel.png" />
     <None Include="img\panel2.png" />
@@ -120,6 +122,8 @@
     <None Include="img\pause2.png" />
     <None Include="img\playlist2.png" />
     <None Include="img\title.png" />
+    <None Include="img\PMenu.png" />
+    <None Include="img\menu_play.png" />
     <Content Include="plugins\bassalac.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

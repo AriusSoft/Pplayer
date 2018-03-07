@@ -16,11 +16,12 @@ namespace PPlayer
 
         public Pplayer()
         {
+            
             InitializeComponent();
             Main.Link = this;
             MainBass.InitBass(MainBass.HG);
             Main.InputFormats();
-
+            
             try
             {
                 PLAYLIST playlist_ = new PLAYLIST(Main.AppPath + "playlists\\base.m3u");
@@ -81,6 +82,7 @@ namespace PPlayer
                     pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
                     Track_label_box.Text = Showed_track_t.Artist;
                     Track_label_box2.Text = Showed_track_t.Title;
+                    Playlist.SelectedIndex = 0;
             }
             else
             {
@@ -98,6 +100,7 @@ namespace PPlayer
                 pictureBox.Image = (Showed_track_t.picture != null) ? Showed_track_t.picture : PPlayer.Properties.Resources.title;
                 Track_label_box.Text = Showed_track_t.Artist;
                 Track_label_box2.Text = Showed_track_t.Title;
+                Playlist.SelectedIndex = 0;
             }
 
             
@@ -360,6 +363,70 @@ namespace PPlayer
                 timer1.Enabled = true;
 
             }
+        }
+
+        private void button_play_menu_Click(object sender, EventArgs e)
+        {
+
+
+            if (button_playlist_menu.selected)
+            {
+                button_playlist_menu.selected = false;
+                button_play_menu.selected = true;
+                button_play_menu.BackColor = Color.FromArgb(38, 58, 81);
+                button_play_menu.Normalcolor = Color.FromArgb(38, 58, 81);
+                button_playlist_menu.BackColor = Color.FromArgb(40, 40, 40);
+                button_playlist_menu.Normalcolor = Color.FromArgb(40, 40, 40);
+                playlist_panel.Hide();
+                Playlist.Visible = false;
+                Playlist.Hide();
+            }
+
+
+
+        }
+
+        private void button_playlist_menu_Click(object sender, EventArgs e)
+        {
+            if (button_play_menu.selected)
+            {
+                button_playlist_menu.selected = true;
+                button_play_menu.selected = false;
+
+                button_playlist_menu.BackColor = Color.FromArgb(38, 58, 81);
+                button_playlist_menu.Normalcolor = Color.FromArgb(38, 58, 81);
+                button_play_menu.BackColor = Color.FromArgb(40, 40, 40);
+                button_play_menu.Normalcolor = Color.FromArgb(40, 40, 40);
+                playlist_panel.Show();
+                Playlist.Visible = true;
+                Playlist.Show();
+            }
+
+
+        }
+
+        private void Track_label_box_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Track_label_box2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tray_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            if (!this.Visible)
+            {
+                this.Show();
+            }
+            else this.Hide();
         }
     }
 }
